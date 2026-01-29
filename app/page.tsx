@@ -151,7 +151,7 @@ export default function Home() {
   return (
     <main ref={containerRef} className="min-h-screen overflow-x-hidden">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-emerald-50/30 to-cream">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cream">
         {/* Animated Background Orbs */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -196,7 +196,7 @@ export default function Home() {
 
         <motion.div
           style={{ y, opacity }}
-          className="relative z-10 max-w-7xl mx-auto px-6 py-24"
+          className="relative z-10 max-w-7xl mx-auto px-6 py-12"
         >
           <div className="text-center">
             {/* Floating Owl Logo - BIGGER with animated eyes */}
@@ -204,16 +204,16 @@ export default function Home() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center justify-center mb-12"
+              className="inline-flex items-center justify-center mb-6"
             >
               <motion.div
                 className="relative"
-                whileHover={{ scale: 1.15 }}
+                whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {/* Big owl logo without background */}
                 <motion.div
-                  className="w-48 h-48 md:w-56 md:h-56"
+                  className="w-20 h-20 md:w-28 md:h-28"
                   animate={{ 
                     y: [0, -8, 0],
                   }}
@@ -227,7 +227,7 @@ export default function Home() {
                 </motion.div>
                 {/* Sparkle effects around the owl */}
                 <motion.div
-                  className="absolute -top-4 -right-4 w-8 h-8 bg-gold rounded-full"
+                  className="absolute -top-3 -right-3 w-5 h-5 bg-gold rounded-full"
                   animate={{
                     scale: [1, 1.5, 1],
                     opacity: [0.8, 0.3, 0.8],
@@ -238,7 +238,7 @@ export default function Home() {
                   }}
                 />
                 <motion.div
-                  className="absolute -bottom-2 -left-4 w-6 h-6 bg-emerald-400 rounded-full"
+                  className="absolute -bottom-1 -left-3 w-4 h-4 bg-emerald-400 rounded-full"
                   animate={{
                     scale: [1, 1.4, 1],
                     opacity: [0.6, 0.2, 0.6],
@@ -250,7 +250,7 @@ export default function Home() {
                   }}
                 />
                 <motion.div
-                  className="absolute top-1/2 -right-6 w-4 h-4 bg-yellow-400 rounded-full"
+                  className="absolute top-1/2 -right-4 w-3 h-3 bg-yellow-400 rounded-full"
                   animate={{
                     scale: [1, 1.3, 1],
                     opacity: [0.7, 0.3, 0.7],
@@ -269,7 +269,7 @@ export default function Home() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-7xl md:text-9xl font-black mb-8 leading-[0.9] tracking-tight"
+              className="font-display text-5xl md:text-8xl font-black mb-6 leading-[0.95] tracking-tight"
             >
               <span className="block text-gray-900">Your Entire</span>
               <span className="block gradient-text">Business</span>
@@ -281,10 +281,10 @@ export default function Home() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-2xl md:text-3xl text-gray-700 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
+              className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto font-light leading-relaxed"
             >
               SAL is the AI operations partner that runs your salon, spa, or barbershop through{' '}
-              <span className="font-semibold text-emerald-700">WhatsApp</span>—so you can focus on growth,{' '}
+              <span className="font-semibold text-emerald-700">WhatsApp</span>, so you can focus on growth,{' '}
               <span className="italic">not admin</span>.
             </motion.p>
 
@@ -293,13 +293,13 @@ export default function Home() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+              className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-10"
             >
               <motion.a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-12 py-6 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl font-bold text-xl shadow-2xl overflow-hidden"
+                className="group relative px-10 py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl font-bold text-lg shadow-2xl overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -322,7 +322,7 @@ export default function Home() {
 
               <motion.a
                 href={`mailto:${email}`}
-                className="px-12 py-6 glass border-2 border-emerald-600 text-emerald-700 rounded-2xl font-bold text-xl"
+                className="px-10 py-5 glass border-2 border-emerald-600 text-emerald-700 rounded-2xl font-bold text-lg"
                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(5, 150, 105, 0.1)' }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -335,40 +335,27 @@ export default function Home() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="inline-flex items-center gap-6 glass px-8 py-4 rounded-full"
+              className="inline-flex items-center gap-5 glass px-8 py-4 rounded-full"
             >
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (
-                  <motion.div
+                  <motion.img
                     key={i}
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 border-4 border-white shadow-lg"
+                    src={`/avatar${i}.png`}
+                    alt={`Customer ${i}`}
+                    className="w-10 h-10 rounded-full border-2 border-white shadow-lg object-cover"
                     whileHover={{ scale: 1.2, zIndex: 10 }}
                     style={{ zIndex: 4 - i }}
                   />
                 ))}
               </div>
               <div className="text-left">
-                <p className="font-semibold text-gray-900">Trusted by 30+ salons</p>
-                <p className="text-sm text-gray-600">across Dubai</p>
+                <p className="font-semibold text-gray-900">Trusted by 30+ salons - Dubai</p>
               </div>
             </motion.div>
           </div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-8 h-12 border-2 border-emerald-600 rounded-full flex items-start justify-center p-2">
-            <motion.div
-              className="w-2 h-2 bg-emerald-600 rounded-full"
-              animate={{ y: [0, 20, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* WHATSAPP MOCKUP SECTION */}
@@ -487,7 +474,7 @@ export default function Home() {
       </section>
 
       {/* PROBLEM SECTION */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      <section className="py-32 bg-cream relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(circle, #059669 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         </div>

@@ -17,11 +17,11 @@ const config: Config = {
           700: '#047857',
           900: '#064e3b',
         },
-        cream: '#FFF8F0',
+        cream: '#FAF6F1',
         gold: '#D4AF37',
       },
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
+        display: ['Space Grotesk', 'sans-serif'],
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       animation: {
