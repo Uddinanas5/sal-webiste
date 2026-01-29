@@ -23,37 +23,116 @@ import {
   Calendar
 } from 'lucide-react';
 
-// Owl Logo Component
-const OwlLogo = ({ className = "w-full h-full" }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="SAL Owl Mascot" className={className}>
-    <defs>
-      <linearGradient id="owlBody" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="#1FA971"/>
-        <stop offset="1" stopColor="#0E6B4E"/>
-      </linearGradient>
-      <linearGradient id="owlBelly" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="#CFF2E4"/>
-        <stop offset="1" stopColor="#9EDBC6"/>
-      </linearGradient>
-    </defs>
-    <path d="M128 34 C100 34 76 50 66 74 C52 74 42 88 42 104 C42 136 58 154 68 162 C72 199 96 226 128 226 C160 226 184 199 188 162 C198 154 214 136 214 104 C214 88 204 74 190 74 C180 50 156 34 128 34Z" fill="url(#owlBody)"/>
-    <path d="M78 74 L64 52 L92 66 Z" fill="#0E6B4E"/>
-    <path d="M178 74 L192 52 L164 66 Z" fill="#0E6B4E"/>
-    <path d="M128 98 C102 98 86 118 86 142 C86 175 104 202 128 202 C152 202 170 175 170 142 C170 118 154 98 128 98Z" fill="url(#owlBelly)"/>
-    <circle cx="96" cy="108" r="30" fill="#FFFFFF"/>
-    <circle cx="160" cy="108" r="30" fill="#FFFFFF"/>
-    <circle cx="96" cy="108" r="30" fill="none" stroke="#0E6B4E" strokeWidth="6" opacity="0.4"/>
-    <circle cx="160" cy="108" r="30" fill="none" stroke="#0E6B4E" strokeWidth="6" opacity="0.4"/>
-    <circle cx="96" cy="112" r="10" fill="#0F172A"/>
-    <circle cx="160" cy="112" r="10" fill="#0F172A"/>
-    <circle cx="92" cy="108" r="3.5" fill="#FFFFFF"/>
-    <circle cx="156" cy="108" r="3.5" fill="#FFFFFF"/>
-    <path d="M128 120 C122 120 116 126 116 132 C116 140 124 146 128 150 C132 146 140 140 140 132 C140 126 134 120 128 120Z" fill="#F4C430"/>
-    <path d="M92 220 C92 206 112 206 112 220" fill="none" stroke="#F4C430" strokeWidth="8" strokeLinecap="round"/>
-    <path d="M144 220 C144 206 164 206 164 220" fill="none" stroke="#F4C430" strokeWidth="8" strokeLinecap="round"/>
-    <ellipse cx="128" cy="232" rx="60" ry="14" fill="#0F172A" opacity="0.08"/>
-  </svg>
-);
+// Animated Owl Logo Component with moving eyes
+const OwlLogo = ({ className = "w-full h-full", animated = false }: { className?: string; animated?: boolean }) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="SAL Owl Mascot" className={className}>
+      <defs>
+        <linearGradient id="owlBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#1FA971"/>
+          <stop offset="1" stopColor="#0E6B4E"/>
+        </linearGradient>
+        <linearGradient id="owlBelly" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#CFF2E4"/>
+          <stop offset="1" stopColor="#9EDBC6"/>
+        </linearGradient>
+      </defs>
+      {/* Body */}
+      <path d="M128 34 C100 34 76 50 66 74 C52 74 42 88 42 104 C42 136 58 154 68 162 C72 199 96 226 128 226 C160 226 184 199 188 162 C198 154 214 136 214 104 C214 88 204 74 190 74 C180 50 156 34 128 34Z" fill="url(#owlBody)"/>
+      {/* Ears */}
+      <path d="M78 74 L64 52 L92 66 Z" fill="#0E6B4E"/>
+      <path d="M178 74 L192 52 L164 66 Z" fill="#0E6B4E"/>
+      {/* Belly */}
+      <path d="M128 98 C102 98 86 118 86 142 C86 175 104 202 128 202 C152 202 170 175 170 142 C170 118 154 98 128 98Z" fill="url(#owlBelly)"/>
+      {/* Eyes - white part */}
+      <circle cx="96" cy="108" r="30" fill="#FFFFFF"/>
+      <circle cx="160" cy="108" r="30" fill="#FFFFFF"/>
+      <circle cx="96" cy="108" r="30" fill="none" stroke="#0E6B4E" strokeWidth="6" opacity="0.4"/>
+      <circle cx="160" cy="108" r="30" fill="none" stroke="#0E6B4E" strokeWidth="6" opacity="0.4"/>
+      {/* Pupils - animated */}
+      <g className={animated ? "owl-pupils" : ""}>
+        <circle cx="96" cy="112" r="10" fill="#0F172A">
+          {animated && (
+            <animate
+              attributeName="cx"
+              values="96;102;96;90;96"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+          )}
+          {animated && (
+            <animate
+              attributeName="cy"
+              values="112;108;112;116;112"
+              dur="4s"
+              repeatCount="indefinite"
+            />
+          )}
+        </circle>
+        <circle cx="160" cy="112" r="10" fill="#0F172A">
+          {animated && (
+            <animate
+              attributeName="cx"
+              values="160;166;160;154;160"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+          )}
+          {animated && (
+            <animate
+              attributeName="cy"
+              values="112;108;112;116;112"
+              dur="4s"
+              repeatCount="indefinite"
+            />
+          )}
+        </circle>
+        {/* Eye highlights */}
+        <circle cx="92" cy="108" r="3.5" fill="#FFFFFF">
+          {animated && (
+            <animate
+              attributeName="cx"
+              values="92;98;92;86;92"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+          )}
+          {animated && (
+            <animate
+              attributeName="cy"
+              values="108;104;108;112;108"
+              dur="4s"
+              repeatCount="indefinite"
+            />
+          )}
+        </circle>
+        <circle cx="156" cy="108" r="3.5" fill="#FFFFFF">
+          {animated && (
+            <animate
+              attributeName="cx"
+              values="156;162;156;150;156"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+          )}
+          {animated && (
+            <animate
+              attributeName="cy"
+              values="108;104;108;112;108"
+              dur="4s"
+              repeatCount="indefinite"
+            />
+          )}
+        </circle>
+      </g>
+      {/* Beak */}
+      <path d="M128 120 C122 120 116 126 116 132 C116 140 124 146 128 150 C132 146 140 140 140 132 C140 126 134 120 128 120Z" fill="#F4C430"/>
+      {/* Feet */}
+      <path d="M92 220 C92 206 112 206 112 220" fill="none" stroke="#F4C430" strokeWidth="8" strokeLinecap="round"/>
+      <path d="M144 220 C144 206 164 206 164 220" fill="none" stroke="#F4C430" strokeWidth="8" strokeLinecap="round"/>
+    </svg>
+  );
+};
 
 export default function Home() {
   const whatsappNumber = '+971523228314';
@@ -120,7 +199,7 @@ export default function Home() {
           className="relative z-10 max-w-7xl mx-auto px-6 py-24"
         >
           <div className="text-center">
-            {/* Floating Owl Logo */}
+            {/* Floating Owl Logo - BIGGER with animated eyes */}
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -129,21 +208,57 @@ export default function Home() {
             >
               <motion.div
                 className="relative"
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileHover={{ scale: 1.15 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-32 h-32 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-600/50 rotate-6 p-2">
-                  <OwlLogo className="w-full h-full drop-shadow-lg" />
-                </div>
+                {/* Big owl logo without background */}
                 <motion.div
-                  className="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full"
+                  className="w-48 h-48 md:w-56 md:h-56"
+                  animate={{ 
+                    y: [0, -8, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <OwlLogo className="w-full h-full drop-shadow-2xl" animated={true} />
+                </motion.div>
+                {/* Sparkle effects around the owl */}
+                <motion.div
+                  className="absolute -top-4 -right-4 w-8 h-8 bg-gold rounded-full"
                   animate={{
-                    scale: [1, 1.3, 1],
-                    opacity: [1, 0.5, 1],
+                    scale: [1, 1.5, 1],
+                    opacity: [0.8, 0.3, 0.8],
                   }}
                   transition={{
                     duration: 2,
                     repeat: Infinity,
+                  }}
+                />
+                <motion.div
+                  className="absolute -bottom-2 -left-4 w-6 h-6 bg-emerald-400 rounded-full"
+                  animate={{
+                    scale: [1, 1.4, 1],
+                    opacity: [0.6, 0.2, 0.6],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    delay: 0.5,
+                  }}
+                />
+                <motion.div
+                  className="absolute top-1/2 -right-6 w-4 h-4 bg-yellow-400 rounded-full"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.7, 0.3, 0.7],
+                  }}
+                  transition={{
+                    duration: 1.8,
+                    repeat: Infinity,
+                    delay: 1,
                   }}
                 />
               </motion.div>
@@ -313,8 +428,8 @@ export default function Home() {
               >
                 {/* WhatsApp Header */}
                 <div className="bg-emerald-600 p-5 flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-gold to-yellow-600 rounded-full flex items-center justify-center shadow-lg p-1">
-                    <OwlLogo className="w-full h-full" />
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
+                    <OwlLogo className="w-full h-full" animated={true} />
                   </div>
                   <div className="flex-1">
                     <p className="font-bold text-white text-lg">SAL</p>
@@ -696,8 +811,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center shadow-xl p-1">
-                  <OwlLogo className="w-full h-full" />
+                <div className="w-14 h-14 flex items-center justify-center">
+                  <OwlLogo className="w-full h-full drop-shadow-lg" animated={true} />
                 </div>
                 <span className="font-display text-3xl font-black">SAL</span>
               </div>
