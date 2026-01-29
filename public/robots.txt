@@ -1,0 +1,11 @@
+# SAL - AI Operations Partner for Salons
+# https://website-v2-opal.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://website-v2-opal.vercel.app/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
