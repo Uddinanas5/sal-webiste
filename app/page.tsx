@@ -2,6 +2,58 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { 
+  Brain, 
+  Zap, 
+  Target, 
+  Phone, 
+  MoreVertical, 
+  CheckCircle, 
+  BarChart3, 
+  TrendingUp, 
+  Sparkles, 
+  Send, 
+  MessageCircle, 
+  XCircle, 
+  Clock,
+  ArrowRight,
+  Check,
+  Shield,
+  Headphones,
+  Calendar
+} from 'lucide-react';
+
+// Owl Logo Component
+const OwlLogo = ({ className = "w-full h-full" }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="SAL Owl Mascot" className={className}>
+    <defs>
+      <linearGradient id="owlBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor="#1FA971"/>
+        <stop offset="1" stopColor="#0E6B4E"/>
+      </linearGradient>
+      <linearGradient id="owlBelly" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor="#CFF2E4"/>
+        <stop offset="1" stopColor="#9EDBC6"/>
+      </linearGradient>
+    </defs>
+    <path d="M128 34 C100 34 76 50 66 74 C52 74 42 88 42 104 C42 136 58 154 68 162 C72 199 96 226 128 226 C160 226 184 199 188 162 C198 154 214 136 214 104 C214 88 204 74 190 74 C180 50 156 34 128 34Z" fill="url(#owlBody)"/>
+    <path d="M78 74 L64 52 L92 66 Z" fill="#0E6B4E"/>
+    <path d="M178 74 L192 52 L164 66 Z" fill="#0E6B4E"/>
+    <path d="M128 98 C102 98 86 118 86 142 C86 175 104 202 128 202 C152 202 170 175 170 142 C170 118 154 98 128 98Z" fill="url(#owlBelly)"/>
+    <circle cx="96" cy="108" r="30" fill="#FFFFFF"/>
+    <circle cx="160" cy="108" r="30" fill="#FFFFFF"/>
+    <circle cx="96" cy="108" r="30" fill="none" stroke="#0E6B4E" strokeWidth="6" opacity="0.4"/>
+    <circle cx="160" cy="108" r="30" fill="none" stroke="#0E6B4E" strokeWidth="6" opacity="0.4"/>
+    <circle cx="96" cy="112" r="10" fill="#0F172A"/>
+    <circle cx="160" cy="112" r="10" fill="#0F172A"/>
+    <circle cx="92" cy="108" r="3.5" fill="#FFFFFF"/>
+    <circle cx="156" cy="108" r="3.5" fill="#FFFFFF"/>
+    <path d="M128 120 C122 120 116 126 116 132 C116 140 124 146 128 150 C132 146 140 140 140 132 C140 126 134 120 128 120Z" fill="#F4C430"/>
+    <path d="M92 220 C92 206 112 206 112 220" fill="none" stroke="#F4C430" strokeWidth="8" strokeLinecap="round"/>
+    <path d="M144 220 C144 206 164 206 164 220" fill="none" stroke="#F4C430" strokeWidth="8" strokeLinecap="round"/>
+    <ellipse cx="128" cy="232" rx="60" ry="14" fill="#0F172A" opacity="0.08"/>
+  </svg>
+);
 
 export default function Home() {
   const whatsappNumber = '+971523228314';
@@ -17,14 +69,9 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const fadeInUpVariants = {
-    initial: { y: 30, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
   return (
     <main ref={containerRef} className="min-h-screen overflow-x-hidden">
-      {/* HERO SECTION - ABSOLUTELY STUNNING */}
+      {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-emerald-50/30 to-cream">
         {/* Animated Background Orbs */}
         <div className="absolute inset-0 overflow-hidden">
@@ -73,7 +120,7 @@ export default function Home() {
           className="relative z-10 max-w-7xl mx-auto px-6 py-24"
         >
           <div className="text-center">
-            {/* Floating Logo */}
+            {/* Floating Owl Logo */}
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -85,8 +132,8 @@ export default function Home() {
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-32 h-32 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-600/50 rotate-6">
-                  <span className="text-6xl">🦉</span>
+                <div className="w-32 h-32 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-600/50 rotate-6 p-2">
+                  <OwlLogo className="w-full h-full drop-shadow-lg" />
                 </div>
                 <motion.div
                   className="absolute -top-2 -right-2 w-6 h-6 bg-gold rounded-full"
@@ -102,7 +149,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Main Headline - DRAMATIC */}
+            {/* Main Headline */}
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -126,7 +173,7 @@ export default function Home() {
               <span className="italic">not admin</span>.
             </motion.p>
 
-            {/* CTA Buttons - ANIMATED */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -153,7 +200,7 @@ export default function Home() {
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    →
+                    <ArrowRight className="w-5 h-5" />
                   </motion.span>
                 </span>
               </motion.a>
@@ -168,7 +215,7 @@ export default function Home() {
               </motion.a>
             </motion.div>
 
-            {/* Social Proof - FLOATING */}
+            {/* Social Proof */}
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -209,7 +256,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* WHATSAPP MOCKUP SECTION - FLOATING & INTERACTIVE */}
+      {/* WHATSAPP MOCKUP SECTION */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -230,9 +277,9 @@ export default function Home() {
               </p>
               <div className="space-y-4">
                 {[
-                  { icon: '🧠', text: 'Perfect memory of every conversation' },
-                  { icon: '⚡', text: 'Responds in seconds, 24/7' },
-                  { icon: '🎯', text: 'Learns your business and voice' },
+                  { icon: Brain, text: 'Perfect memory of every conversation' },
+                  { icon: Zap, text: 'Responds in seconds, 24/7' },
+                  { icon: Target, text: 'Learns your business and voice' },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -242,14 +289,16 @@ export default function Home() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.5 }}
                   >
-                    <div className="text-3xl">{item.icon}</div>
+                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                      <item.icon className="w-6 h-6 text-emerald-600" />
+                    </div>
                     <p className="text-lg text-gray-700">{item.text}</p>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Right: WhatsApp Mockup - FLOATING */}
+            {/* Right: WhatsApp Mockup */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -264,16 +313,16 @@ export default function Home() {
               >
                 {/* WhatsApp Header */}
                 <div className="bg-emerald-600 p-5 flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-gold to-yellow-600 rounded-full flex items-center justify-center text-3xl shadow-lg">
-                    🦉
+                  <div className="w-14 h-14 bg-gradient-to-br from-gold to-yellow-600 rounded-full flex items-center justify-center shadow-lg p-1">
+                    <OwlLogo className="w-full h-full" />
                   </div>
                   <div className="flex-1">
                     <p className="font-bold text-white text-lg">SAL</p>
                     <p className="text-xs text-emerald-100">Online • AI Partner</p>
                   </div>
                   <div className="flex gap-3 text-white">
-                    <div className="text-xl">📞</div>
-                    <div className="text-xl">⋮</div>
+                    <Phone className="w-5 h-5" />
+                    <MoreVertical className="w-5 h-5" />
                   </div>
                 </div>
 
@@ -281,9 +330,9 @@ export default function Home() {
                 <div className="bg-[#ece5dd] p-6 space-y-4 h-[500px] overflow-auto">
                   {[
                     { type: 'user', text: 'Hey SAL, send a reminder to the team about tomorrow\'s meeting at 10am', time: '13:15' },
-                    { type: 'sal', text: '✅ Done! I\'ve sent a reminder to all 8 team members about tomorrow\'s meeting at 10am.', time: '13:15' },
+                    { type: 'sal', text: '✓ Done! I\'ve sent a reminder to all 8 team members about tomorrow\'s meeting at 10am.', time: '13:15' },
                     { type: 'user', text: 'How many appointments this week?', time: '13:16' },
-                    { type: 'sal', text: '📊 This week\'s appointments:\n\n• Mon: 12 appointments\n• Tue: 15 appointments\n• Wed: 18 appointments\n• Thu: 14 appointments\n• Fri: 16 appointments\n\n✨ Total: 75 appointments\n📈 +12% vs last week', time: '13:16' },
+                    { type: 'sal', text: 'This week\'s appointments:\n\n• Mon: 12 appointments\n• Tue: 15 appointments\n• Wed: 18 appointments\n• Thu: 14 appointments\n• Fri: 16 appointments\n\nTotal: 75 appointments\n+12% vs last week', time: '13:16', hasIcons: true },
                   ].map((msg, i) => (
                     <motion.div
                       key={i}
@@ -312,8 +361,8 @@ export default function Home() {
                   <div className="flex-1 bg-white rounded-full px-5 py-3 text-sm text-gray-400">
                     Message SAL...
                   </div>
-                  <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg cursor-pointer hover:bg-emerald-700 transition-colors">
-                    ➤
+                  <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer hover:bg-emerald-700 transition-colors">
+                    <Send className="w-5 h-5" />
                   </div>
                 </div>
               </motion.div>
@@ -322,7 +371,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROBLEM SECTION - DRAMATIC */}
+      {/* PROBLEM SECTION */}
       <section className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(circle, #059669 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
@@ -345,17 +394,17 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: '💬',
+                icon: MessageCircle,
                 title: 'Drowning in Messages',
                 desc: 'Your WhatsApp is chaos—team questions, customer inquiries, supplier messages. You spend 3+ hours a day just replying.',
               },
               {
-                icon: '❌',
+                icon: XCircle,
                 title: 'Tasks Falling Through Cracks',
                 desc: 'You meant to follow up with that VIP client. You forgot to order supplies. The new hire wasn\'t told about the schedule change.',
               },
               {
-                icon: '⏰',
+                icon: Clock,
                 title: 'No Time to Grow',
                 desc: 'You\'re so busy firefighting that you can\'t work ON your business. Marketing? Strategy? Forget it.',
               },
@@ -371,11 +420,11 @@ export default function Home() {
               >
                 <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 h-full border border-gray-100">
                   <motion.div
-                    className="text-7xl mb-6"
-                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.2 }}
+                    className="w-20 h-20 bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl flex items-center justify-center mb-6"
+                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    {item.icon}
+                    <item.icon className="w-10 h-10 text-red-500" />
                   </motion.div>
                   <h3 className="font-display text-3xl font-bold mb-4 text-gray-900">{item.title}</h3>
                   <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
@@ -386,7 +435,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOLUTION SECTION - LUXURIOUS */}
+      {/* SOLUTION SECTION */}
       <section className="py-32 bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
@@ -441,17 +490,18 @@ export default function Home() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-14 py-7 bg-gold hover:bg-yellow-500 text-emerald-900 rounded-2xl font-black text-2xl shadow-2xl shadow-gold/50"
+              className="inline-flex items-center gap-3 px-14 py-7 bg-gold hover:bg-yellow-500 text-emerald-900 rounded-2xl font-black text-2xl shadow-2xl shadow-gold/50"
               whileHover={{ scale: 1.05, rotate: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Book a Demo →
+              Book a Demo
+              <ArrowRight className="w-6 h-6" />
             </motion.a>
           </div>
         </div>
       </section>
 
-      {/* PRICING SECTION - PREMIUM */}
+      {/* PRICING SECTION */}
       <section className="py-32 bg-cream relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -508,10 +558,18 @@ export default function Home() {
                   </div>
 
                   <ul className="space-y-3 mb-10 text-sm">
-                    {['All features', '24/7 support', 'Custom training', 'WhatsApp integration', '24h delivery'].map((feature, j) => (
+                    {[
+                      { icon: Sparkles, text: 'All features' },
+                      { icon: Headphones, text: '24/7 support' },
+                      { icon: Brain, text: 'Custom training' },
+                      { icon: MessageCircle, text: 'WhatsApp integration' },
+                      { icon: Calendar, text: '24h delivery' },
+                    ].map((feature, j) => (
                       <li key={j} className="flex items-center gap-3">
-                        <span className="text-xl">✅</span>
-                        <span>{feature}</span>
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${plan.popular ? 'bg-white/20' : 'bg-emerald-100'}`}>
+                          <Check className={`w-4 h-4 ${plan.popular ? 'text-white' : 'text-emerald-600'}`} />
+                        </div>
+                        <span>{feature.text}</span>
                       </li>
                     ))}
                   </ul>
@@ -537,7 +595,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA - EXPLOSIVE */}
+      {/* FINAL CTA */}
       <section className="py-40 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
@@ -591,11 +649,12 @@ export default function Home() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-14 py-7 bg-white text-emerald-700 rounded-2xl font-black text-2xl shadow-2xl"
+              className="inline-flex items-center justify-center gap-3 px-14 py-7 bg-white text-emerald-700 rounded-2xl font-black text-2xl shadow-2xl"
               whileHover={{ scale: 1.1, rotate: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              See SAL in Action →
+              See SAL in Action
+              <ArrowRight className="w-6 h-6" />
             </motion.a>
 
             <motion.a
@@ -609,7 +668,12 @@ export default function Home() {
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-8 text-sm">
-            {['7-Day Money-Back Guarantee', '24-Hour Setup', '24/7 Support', 'No Long-Term Contracts'].map((item, i) => (
+            {[
+              { icon: Shield, text: '7-Day Money-Back Guarantee' },
+              { icon: Zap, text: '24-Hour Setup' },
+              { icon: Headphones, text: '24/7 Support' },
+              { icon: Calendar, text: 'No Long-Term Contracts' },
+            ].map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
@@ -618,22 +682,22 @@ export default function Home() {
                 transition={{ delay: 0.6 + i * 0.1 }}
                 className="flex items-center gap-2 glass bg-white/10 backdrop-blur px-6 py-3 rounded-full"
               >
-                <span className="text-2xl">✅</span>
-                <span>{item}</span>
+                <item.icon className="w-5 h-5 text-emerald-300" />
+                <span>{item.text}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FOOTER - ELEGANT */}
+      {/* FOOTER */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center text-3xl shadow-xl">
-                  🦉
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center shadow-xl p-1">
+                  <OwlLogo className="w-full h-full" />
                 </div>
                 <span className="font-display text-3xl font-black">SAL</span>
               </div>
@@ -666,7 +730,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-            <p>&copy; 2026 SAL. All rights reserved. Built with 🐙 by OMNI</p>
+            <p>&copy; 2026 SAL. All rights reserved.</p>
           </div>
         </div>
       </footer>
