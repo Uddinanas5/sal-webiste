@@ -378,199 +378,72 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cream pt-20">
-        {/* Animated Background Orbs */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute top-20 -left-20 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -50, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute bottom-20 -right-20 w-[500px] h-[500px] bg-gold/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, -100, 0],
-              y: [0, 50, 0],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/2 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.5, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
+        {/* Static Background Orbs - no animation on mobile for performance */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 -left-20 w-64 sm:w-96 h-64 sm:h-96 bg-emerald-500/20 rounded-full blur-2xl sm:blur-3xl" />
+          <div className="absolute bottom-20 -right-20 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-gold/10 rounded-full blur-2xl sm:blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-emerald-600/10 rounded-full blur-2xl sm:blur-3xl" />
         </div>
 
-        <motion.div
-          style={{ y, opacity }}
-          className="relative z-10 max-w-7xl mx-auto px-6 py-12"
-        >
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
           <div className="text-center">
-            {/* Floating Owl Logo - fits in viewport */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center justify-center mb-6"
-            >
-              <motion.div
-                className="relative"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {/* Owl logo - responsive size */}
-                <motion.div
-                  className="w-20 h-20 md:w-28 md:h-28"
-                  animate={{ 
-                    y: [0, -6, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <OwlLogo className="w-full h-full drop-shadow-2xl" animated={true} />
-                </motion.div>
-                {/* Sparkle effects */}
-                <motion.div
-                  className="absolute -top-3 -right-3 w-5 h-5 bg-gold rounded-full"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [0.8, 0.3, 0.8],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                />
-                <motion.div
-                  className="absolute -bottom-1 -left-3 w-4 h-4 bg-emerald-400 rounded-full"
-                  animate={{
-                    scale: [1, 1.4, 1],
-                    opacity: [0.6, 0.2, 0.6],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    delay: 0.5,
-                  }}
-                />
-                <motion.div
-                  className="absolute top-1/2 -right-4 w-3 h-3 bg-yellow-400 rounded-full"
-                  animate={{
-                    scale: [1, 1.3, 1],
-                    opacity: [0.7, 0.3, 0.7],
-                  }}
-                  transition={{
-                    duration: 1.8,
-                    repeat: Infinity,
-                    delay: 1,
-                  }}
-                />
-              </motion.div>
-            </motion.div>
+            {/* Owl Logo - simple, no floating animation on mobile */}
+            <div className="inline-flex items-center justify-center mb-6">
+              <div className="relative">
+                <div className="w-20 h-20 md:w-28 md:h-28">
+                  <OwlLogo className="w-full h-full drop-shadow-xl" animated={false} />
+                </div>
+                {/* Static sparkle dots - hidden on mobile */}
+                <div className="hidden sm:block absolute -top-2 -right-2 w-4 h-4 bg-gold rounded-full opacity-70" />
+                <div className="hidden sm:block absolute -bottom-1 -left-2 w-3 h-3 bg-emerald-400 rounded-full opacity-60" />
+              </div>
+            </div>
 
             {/* Main Headline - responsive sizes */}
-            <motion.h1
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 sm:mb-6 leading-[0.95] tracking-tight px-2"
-            >
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 sm:mb-6 leading-[0.95] tracking-tight px-2">
               <span className="block text-gray-900">Your Entire</span>
               <span className="block gradient-text">Business</span>
               <span className="block text-gray-900">In One Chat</span>
-            </motion.h1>
+            </h1>
 
             {/* Subheadline - smaller on mobile */}
-            <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 sm:mb-10 max-w-3xl mx-auto font-light leading-relaxed px-4"
-            >
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 sm:mb-10 max-w-3xl mx-auto font-light leading-relaxed px-4">
               SAL is the AI operations partner that runs your salon, spa, or barbershop through{' '}
               <span className="font-semibold text-emerald-700">WhatsApp</span>, so you can focus on growth,{' '}
               <span className="italic">not admin</span>.
-            </motion.p>
+            </p>
 
             {/* CTA Buttons - compact */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-center mb-8 sm:mb-10 px-4"
-            >
-              <motion.a
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-center mb-8 sm:mb-10 px-4">
+              <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-2xl overflow-hidden text-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-xl text-center active:scale-95 transition-transform"
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-800"
-                  initial={{ x: '100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="flex items-center justify-center gap-2 whitespace-nowrap">
                   See SAL in Action
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-                  </motion.span>
+                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
                 </span>
-              </motion.a>
+              </a>
 
-              <motion.a
+              <a
                 href={`mailto:${email}`}
-                className="w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 glass border-2 border-emerald-600 text-emerald-700 rounded-2xl font-bold text-base sm:text-lg text-center"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(5, 150, 105, 0.1)' }}
-                whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 bg-white/70 backdrop-blur border-2 border-emerald-600 text-emerald-700 rounded-2xl font-bold text-base sm:text-lg text-center active:scale-95 transition-transform"
               >
                 Contact Us
-              </motion.a>
-            </motion.div>
+              </a>
+            </div>
 
             {/* Social Proof - compact */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="inline-flex items-center gap-3 sm:gap-5 glass px-4 sm:px-8 py-3 sm:py-4 rounded-full"
-            >
+            <div className="inline-flex items-center gap-3 sm:gap-5 bg-white/70 backdrop-blur px-4 sm:px-8 py-3 sm:py-4 rounded-full border border-white/50">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
-                  <motion.img
+                  <img
                     key={i}
                     src={`/avatar${i}.png`}
                     alt={`Customer ${i}`}
                     className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-lg object-cover"
-                    whileHover={{ scale: 1.2, zIndex: 10 }}
                     style={{ zIndex: 4 - i }}
                   />
                 ))}
@@ -578,9 +451,9 @@ export default function Home() {
               <div className="text-left">
                 <p className="font-semibold text-gray-900 text-sm sm:text-base">Trusted by 30+ salons - Dubai</p>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
       </section>
 
@@ -621,12 +494,39 @@ export default function Home() {
               viewport={{ once: true }}
               className="w-full lg:w-auto order-2 lg:order-1"
             >
-              <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+              {/* Mobile: Simple 2-column grid of icons only */}
+              <div className="grid grid-cols-3 gap-2 lg:hidden mb-4">
+                {chatScenarios.map((scenario, i) => (
+                  <button
+                    key={scenario.id}
+                    onClick={() => setActiveScenario(i)}
+                    className={`flex flex-col items-center gap-1.5 p-3 rounded-xl transition-all ${
+                      i === activeScenario
+                        ? 'bg-white shadow-md'
+                        : 'bg-white/50'
+                    }`}
+                  >
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl ${
+                      i === activeScenario ? 'bg-emerald-50' : 'bg-gray-100'
+                    }`}>
+                      {scenario.icon}
+                    </div>
+                    <p className={`text-[10px] font-medium text-center leading-tight ${
+                      i === activeScenario ? 'text-gray-900' : 'text-gray-500'
+                    }`}>
+                      {scenario.label.split(' ')[0]}
+                    </p>
+                  </button>
+                ))}
+              </div>
+
+              {/* Desktop: Full list with labels */}
+              <div className="hidden lg:flex lg:flex-col gap-2">
                 {chatScenarios.map((scenario, i) => (
                   <motion.button
                     key={scenario.id}
                     onClick={() => setActiveScenario(i)}
-                    className={`relative flex items-center gap-3 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-left transition-all duration-300 min-w-[160px] sm:min-w-[200px] lg:min-w-[240px] flex-shrink-0 ${
+                    className={`relative flex items-center gap-4 px-5 py-4 rounded-2xl text-left transition-all duration-300 min-w-[240px] ${
                       i === activeScenario
                         ? 'bg-white shadow-lg shadow-gray-200/50'
                         : 'bg-transparent hover:bg-white/50'
@@ -634,67 +534,30 @@ export default function Home() {
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    {/* Active indicator */}
-                    <motion.div
-                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-emerald-500 rounded-full hidden lg:block"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-emerald-500 rounded-full"
+                      style={{
                         height: i === activeScenario ? 32 : 0,
-                        opacity: i === activeScenario ? 1 : 0
+                        opacity: i === activeScenario ? 1 : 0,
+                        transition: 'all 0.2s'
                       }}
-                      transition={{ duration: 0.2 }}
                     />
-
-                    {/* Icon */}
-                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center text-xl sm:text-2xl transition-all flex-shrink-0 ${
-                      i === activeScenario
-                        ? 'bg-emerald-50'
-                        : 'bg-gray-100'
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-all ${
+                      i === activeScenario ? 'bg-emerald-50' : 'bg-gray-100'
                     }`}>
                       {scenario.icon}
                     </div>
-
-                    {/* Label */}
-                    <div className="flex-1 min-w-0">
-                      <p className={`font-semibold transition-colors text-sm sm:text-base truncate ${
+                    <div className="flex-1">
+                      <p className={`font-semibold transition-colors ${
                         i === activeScenario ? 'text-gray-900' : 'text-gray-600'
                       }`}>
                         {scenario.label}
                       </p>
-                      {i === activeScenario && (
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: '100%' }}
-                          transition={{ duration: 5, ease: 'linear' }}
-                          className="h-0.5 bg-emerald-500/30 rounded-full mt-1 sm:mt-2"
-                          key={activeScenario}
-                        />
-                      )}
                     </div>
-
-                    {/* Arrow indicator */}
                     {i === activeScenario && (
-                      <motion.div
-                        initial={{ opacity: 0, x: -5 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="hidden lg:block"
-                      >
-                        <ArrowRight className="w-4 h-4 text-emerald-500" />
-                      </motion.div>
+                      <ArrowRight className="w-4 h-4 text-emerald-500" />
                     )}
                   </motion.button>
                 ))}
-
-                {/* More capabilities indicator */}
-                <div className="flex items-center gap-3 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 text-gray-400 flex-shrink-0 min-w-[160px] sm:min-w-[200px]">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gray-100 flex items-center justify-center border-2 border-dashed border-gray-200 flex-shrink-0">
-                    <span className="text-base sm:text-lg">+</span>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="font-medium text-gray-500 text-sm sm:text-base">20+ more</p>
-                    <p className="text-xs sm:text-sm text-gray-400 truncate">Book a demo</p>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -854,18 +717,18 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-8 mt-16"
+            className="flex justify-center gap-4 sm:gap-8 mt-10 sm:mt-16"
           >
             {[
               { icon: Brain, text: 'Perfect memory' },
               { icon: Zap, text: 'Instant responses' },
               { icon: Target, text: 'Learns your voice' },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3 text-gray-600">
-                <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-emerald-600" />
+              <div key={i} className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-gray-600">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-white shadow-sm flex items-center justify-center">
+                  <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
                 </div>
-                <span className="font-medium">{item.text}</span>
+                <span className="font-medium text-xs sm:text-base text-center">{item.text}</span>
               </div>
             ))}
           </motion.div>
