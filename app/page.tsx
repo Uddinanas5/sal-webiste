@@ -150,8 +150,8 @@ export default function Home() {
 
   return (
     <main ref={containerRef} className="min-h-screen overflow-x-hidden">
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-emerald-50/30 to-cream">
+      {/* HERO SECTION - fits in viewport */}
+      <section className="relative h-screen max-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-emerald-50/30 to-cream">
         {/* Animated Background Orbs */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -196,26 +196,26 @@ export default function Home() {
 
         <motion.div
           style={{ y, opacity }}
-          className="relative z-10 max-w-7xl mx-auto px-6 py-24"
+          className="relative z-10 max-w-7xl mx-auto px-6 py-8 md:py-12"
         >
           <div className="text-center">
-            {/* Floating Owl Logo - BIGGER with animated eyes */}
+            {/* Floating Owl Logo - fits in viewport */}
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center justify-center mb-12"
+              className="inline-flex items-center justify-center mb-4 md:mb-6"
             >
               <motion.div
                 className="relative"
-                whileHover={{ scale: 1.15 }}
+                whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Big owl logo without background */}
+                {/* Owl logo - responsive size */}
                 <motion.div
-                  className="w-48 h-48 md:w-56 md:h-56"
+                  className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
                   animate={{ 
-                    y: [0, -8, 0],
+                    y: [0, -6, 0],
                   }}
                   transition={{
                     duration: 3,
@@ -225,9 +225,9 @@ export default function Home() {
                 >
                   <OwlLogo className="w-full h-full drop-shadow-2xl" animated={true} />
                 </motion.div>
-                {/* Sparkle effects around the owl */}
+                {/* Sparkle effects */}
                 <motion.div
-                  className="absolute -top-4 -right-4 w-8 h-8 bg-gold rounded-full"
+                  className="absolute -top-2 -right-2 w-5 h-5 md:w-6 md:h-6 bg-gold rounded-full"
                   animate={{
                     scale: [1, 1.5, 1],
                     opacity: [0.8, 0.3, 0.8],
@@ -238,7 +238,7 @@ export default function Home() {
                   }}
                 />
                 <motion.div
-                  className="absolute -bottom-2 -left-4 w-6 h-6 bg-emerald-400 rounded-full"
+                  className="absolute -bottom-1 -left-2 w-4 h-4 md:w-5 md:h-5 bg-emerald-400 rounded-full"
                   animate={{
                     scale: [1, 1.4, 1],
                     opacity: [0.6, 0.2, 0.6],
@@ -250,7 +250,7 @@ export default function Home() {
                   }}
                 />
                 <motion.div
-                  className="absolute top-1/2 -right-6 w-4 h-4 bg-yellow-400 rounded-full"
+                  className="absolute top-1/2 -right-4 w-3 h-3 bg-yellow-400 rounded-full"
                   animate={{
                     scale: [1, 1.3, 1],
                     opacity: [0.7, 0.3, 0.7],
@@ -264,42 +264,42 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Headline - responsive sizes */}
             <motion.h1
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-7xl md:text-9xl font-black mb-8 leading-[0.9] tracking-tight"
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 md:mb-6 leading-[0.95] tracking-tight"
             >
               <span className="block text-gray-900">Your Entire</span>
               <span className="block gradient-text">Business</span>
               <span className="block text-gray-900">In One Chat</span>
             </motion.h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - smaller on mobile */}
             <motion.p
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-2xl md:text-3xl text-gray-700 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto font-light leading-relaxed px-4"
             >
               SAL is the AI operations partner that runs your salon, spa, or barbershop through{' '}
               <span className="font-semibold text-emerald-700">WhatsApp</span>—so you can focus on growth,{' '}
               <span className="italic">not admin</span>.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - compact */}
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-6 md:mb-8"
             >
               <motion.a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-12 py-6 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl font-bold text-xl shadow-2xl overflow-hidden"
+                className="group relative px-6 py-3 md:px-10 md:py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-xl md:rounded-2xl font-bold text-base md:text-lg shadow-2xl overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -309,20 +309,20 @@ export default function Home() {
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
                 />
-                <span className="relative z-10 flex items-center gap-3">
+                <span className="relative z-10 flex items-center gap-2">
                   See SAL in Action
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                   </motion.span>
                 </span>
               </motion.a>
 
               <motion.a
                 href={`mailto:${email}`}
-                className="px-12 py-6 glass border-2 border-emerald-600 text-emerald-700 rounded-2xl font-bold text-xl"
+                className="px-6 py-3 md:px-10 md:py-5 glass border-2 border-emerald-600 text-emerald-700 rounded-xl md:rounded-2xl font-bold text-base md:text-lg"
                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(5, 150, 105, 0.1)' }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -330,26 +330,26 @@ export default function Home() {
               </motion.a>
             </motion.div>
 
-            {/* Social Proof */}
+            {/* Social Proof - compact */}
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="inline-flex items-center gap-6 glass px-8 py-4 rounded-full"
+              className="inline-flex items-center gap-4 glass px-5 py-3 md:px-6 md:py-3 rounded-full"
             >
-              <div className="flex -space-x-3">
+              <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <motion.div
                     key={i}
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 border-4 border-white shadow-lg"
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 border-3 border-white shadow-lg"
                     whileHover={{ scale: 1.2, zIndex: 10 }}
                     style={{ zIndex: 4 - i }}
                   />
                 ))}
               </div>
               <div className="text-left">
-                <p className="font-semibold text-gray-900">Trusted by 30+ salons</p>
-                <p className="text-sm text-gray-600">across Dubai</p>
+                <p className="font-semibold text-gray-900 text-sm md:text-base">Trusted by 30+ salons</p>
+                <p className="text-xs md:text-sm text-gray-600">across Dubai</p>
               </div>
             </motion.div>
           </div>
