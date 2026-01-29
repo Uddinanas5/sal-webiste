@@ -25,16 +25,26 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
-  
+
   .gradient-text {
     background: linear-gradient(to right, #059669, #047857, #064e3b);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
   .shadow-glow {
     box-shadow: 0 0 60px rgba(5, 150, 105, 0.3);
+  }
+
+  /* Hide scrollbar for horizontal scroll on mobile */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 

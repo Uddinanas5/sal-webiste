@@ -495,7 +495,7 @@ export default function Home() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-5xl md:text-8xl font-black mb-6 leading-[0.95] tracking-tight"
+              className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 sm:mb-6 leading-[0.95] tracking-tight px-2"
             >
               <span className="block text-gray-900">Your Entire</span>
               <span className="block gradient-text">Business</span>
@@ -507,7 +507,7 @@ export default function Home() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto font-light leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-8 sm:mb-10 max-w-3xl mx-auto font-light leading-relaxed px-4"
             >
               SAL is the AI operations partner that runs your salon, spa, or barbershop through{' '}
               <span className="font-semibold text-emerald-700">WhatsApp</span>, so you can focus on growth,{' '}
@@ -519,13 +519,13 @@ export default function Home() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-10"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-center mb-8 sm:mb-10 px-4"
             >
               <motion.a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-10 py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl font-bold text-lg shadow-2xl overflow-hidden"
+                className="group relative w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl font-bold text-base sm:text-lg shadow-2xl overflow-hidden text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -548,7 +548,7 @@ export default function Home() {
 
               <motion.a
                 href={`mailto:${email}`}
-                className="px-10 py-5 glass border-2 border-emerald-600 text-emerald-700 rounded-2xl font-bold text-lg"
+                className="w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 glass border-2 border-emerald-600 text-emerald-700 rounded-2xl font-bold text-base sm:text-lg text-center"
                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(5, 150, 105, 0.1)' }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -561,7 +561,7 @@ export default function Home() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="inline-flex items-center gap-5 glass px-8 py-4 rounded-full"
+              className="inline-flex items-center gap-3 sm:gap-5 glass px-4 sm:px-8 py-3 sm:py-4 rounded-full"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
@@ -569,14 +569,14 @@ export default function Home() {
                     key={i}
                     src={`/avatar${i}.png`}
                     alt={`Customer ${i}`}
-                    className="w-10 h-10 rounded-full border-2 border-white shadow-lg object-cover"
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-lg object-cover"
                     whileHover={{ scale: 1.2, zIndex: 10 }}
                     style={{ zIndex: 4 - i }}
                   />
                 ))}
               </div>
               <div className="text-left">
-                <p className="font-semibold text-gray-900">Trusted by 30+ salons - Dubai</p>
+                <p className="font-semibold text-gray-900 text-sm sm:text-base">Trusted by 30+ salons - Dubai</p>
               </div>
             </motion.div>
           </div>
@@ -585,25 +585,25 @@ export default function Home() {
       </section>
 
       {/* WHATSAPP MOCKUP SECTION */}
-      <section className="py-24 bg-[#fafafa] relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-[#fafafa] relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, #000 1px, transparent 0)`,
           backgroundSize: '24px 24px'
         }} />
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="font-display text-5xl md:text-6xl font-bold mb-4 text-gray-900">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-gray-900 px-2">
               It feels like <span className="gradient-text">magic</span>
             </h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto px-4">
               Just message SAL like you'd message a team member. Watch how it handles real scenarios.
             </p>
           </motion.div>
@@ -619,14 +619,14 @@ export default function Home() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="w-full lg:w-auto"
+              className="w-full lg:w-auto order-2 lg:order-1"
             >
-              <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide">
+              <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
                 {chatScenarios.map((scenario, i) => (
                   <motion.button
                     key={scenario.id}
                     onClick={() => setActiveScenario(i)}
-                    className={`relative flex items-center gap-4 px-5 py-4 rounded-2xl text-left transition-all duration-300 min-w-[200px] lg:min-w-[240px] ${
+                    className={`relative flex items-center gap-3 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-left transition-all duration-300 min-w-[160px] sm:min-w-[200px] lg:min-w-[240px] flex-shrink-0 ${
                       i === activeScenario
                         ? 'bg-white shadow-lg shadow-gray-200/50'
                         : 'bg-transparent hover:bg-white/50'
@@ -636,7 +636,7 @@ export default function Home() {
                   >
                     {/* Active indicator */}
                     <motion.div
-                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-emerald-500 rounded-full"
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-emerald-500 rounded-full hidden lg:block"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{
                         height: i === activeScenario ? 32 : 0,
@@ -646,7 +646,7 @@ export default function Home() {
                     />
 
                     {/* Icon */}
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-all ${
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center text-xl sm:text-2xl transition-all flex-shrink-0 ${
                       i === activeScenario
                         ? 'bg-emerald-50'
                         : 'bg-gray-100'
@@ -655,8 +655,8 @@ export default function Home() {
                     </div>
 
                     {/* Label */}
-                    <div className="flex-1">
-                      <p className={`font-semibold transition-colors ${
+                    <div className="flex-1 min-w-0">
+                      <p className={`font-semibold transition-colors text-sm sm:text-base truncate ${
                         i === activeScenario ? 'text-gray-900' : 'text-gray-600'
                       }`}>
                         {scenario.label}
@@ -666,7 +666,7 @@ export default function Home() {
                           initial={{ width: 0 }}
                           animate={{ width: '100%' }}
                           transition={{ duration: 5, ease: 'linear' }}
-                          className="h-0.5 bg-emerald-500/30 rounded-full mt-2"
+                          className="h-0.5 bg-emerald-500/30 rounded-full mt-1 sm:mt-2"
                           key={activeScenario}
                         />
                       )}
@@ -686,13 +686,13 @@ export default function Home() {
                 ))}
 
                 {/* More capabilities indicator */}
-                <div className="flex items-center gap-4 px-5 py-4 text-gray-400">
-                  <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center border-2 border-dashed border-gray-200">
-                    <span className="text-lg">+</span>
+                <div className="flex items-center gap-3 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 text-gray-400 flex-shrink-0 min-w-[160px] sm:min-w-[200px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gray-100 flex items-center justify-center border-2 border-dashed border-gray-200 flex-shrink-0">
+                    <span className="text-base sm:text-lg">+</span>
                   </div>
-                  <div>
-                    <p className="font-medium text-gray-500">20+ more capabilities</p>
-                    <p className="text-sm text-gray-400">Book a demo to see all</p>
+                  <div className="min-w-0">
+                    <p className="font-medium text-gray-500 text-sm sm:text-base">20+ more</p>
+                    <p className="text-xs sm:text-sm text-gray-400 truncate">Book a demo</p>
                   </div>
                 </div>
               </div>
@@ -704,31 +704,31 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="relative w-full flex justify-center order-1 lg:order-2"
             >
-              {/* iPhone Frame */}
-              <div className="relative">
+              {/* iPhone Frame - scales on mobile */}
+              <div className="relative transform scale-[0.85] sm:scale-90 md:scale-100 origin-top">
                 {/* Phone outer frame */}
-                <div className="relative bg-[#1a1a1a] rounded-[3rem] p-3 shadow-2xl shadow-black/30">
-                  {/* Side buttons - Volume */}
-                  <div className="absolute -left-[3px] top-28 w-[3px] h-8 bg-[#2a2a2a] rounded-l-sm" />
-                  <div className="absolute -left-[3px] top-40 w-[3px] h-12 bg-[#2a2a2a] rounded-l-sm" />
-                  <div className="absolute -left-[3px] top-56 w-[3px] h-12 bg-[#2a2a2a] rounded-l-sm" />
+                <div className="relative bg-[#1a1a1a] rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl shadow-black/30">
+                  {/* Side buttons - Volume - hidden on mobile for cleaner look */}
+                  <div className="hidden sm:block absolute -left-[3px] top-28 w-[3px] h-8 bg-[#2a2a2a] rounded-l-sm" />
+                  <div className="hidden sm:block absolute -left-[3px] top-40 w-[3px] h-12 bg-[#2a2a2a] rounded-l-sm" />
+                  <div className="hidden sm:block absolute -left-[3px] top-56 w-[3px] h-12 bg-[#2a2a2a] rounded-l-sm" />
                   {/* Side button - Power */}
-                  <div className="absolute -right-[3px] top-36 w-[3px] h-16 bg-[#2a2a2a] rounded-r-sm" />
+                  <div className="hidden sm:block absolute -right-[3px] top-36 w-[3px] h-16 bg-[#2a2a2a] rounded-r-sm" />
 
                   {/* Inner screen bezel */}
-                  <div className="relative bg-black rounded-[2.5rem] overflow-hidden">
+                  <div className="relative bg-black rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden">
                     {/* Dynamic Island / Notch */}
-                    <div className="absolute top-0 left-0 right-0 z-30 flex justify-center pt-3">
-                      <div className="w-28 h-7 bg-black rounded-full flex items-center justify-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-[#1a1a1a] ring-1 ring-gray-800" />
-                        <div className="w-3 h-3 rounded-full bg-[#0a0a0a] ring-1 ring-gray-800" />
+                    <div className="absolute top-0 left-0 right-0 z-30 flex justify-center pt-2 sm:pt-3">
+                      <div className="w-20 sm:w-28 h-5 sm:h-7 bg-black rounded-full flex items-center justify-center gap-1 sm:gap-2">
+                        <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#1a1a1a] ring-1 ring-gray-800" />
+                        <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-[#0a0a0a] ring-1 ring-gray-800" />
                       </div>
                     </div>
 
                     {/* Screen content */}
-                    <div className="w-[320px] h-[640px] overflow-hidden">
+                    <div className="w-[280px] sm:w-[300px] md:w-[320px] h-[560px] sm:h-[600px] md:h-[640px] overflow-hidden">
                       {/* Status bar */}
                       <div className="bg-emerald-600 pt-12 pb-0">
                         <div className="flex justify-between items-center px-6 py-1 text-white text-xs">
@@ -873,24 +873,24 @@ export default function Home() {
       </section>
 
       {/* FEATURES SECTION */}
-      <section id="features" className="py-32 bg-cream relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="features" className="py-16 sm:py-24 lg:py-32 bg-cream relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 px-2">
               Everything SAL Can{' '}
               <span className="gradient-text">Do For You</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               From scheduling to inventory, SAL handles all your daily operations so you can focus on what matters most.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 icon: CalendarCheck,
@@ -936,16 +936,16 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-5 ${
                   feature.color === 'emerald' ? 'bg-emerald-100' :
                   feature.color === 'blue' ? 'bg-blue-100' :
                   feature.color === 'purple' ? 'bg-purple-100' :
                   feature.color === 'orange' ? 'bg-orange-100' :
                   feature.color === 'red' ? 'bg-red-100' : 'bg-yellow-100'
                 }`}>
-                  <feature.icon className={`w-7 h-7 ${
+                  <feature.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${
                     feature.color === 'emerald' ? 'text-emerald-600' :
                     feature.color === 'blue' ? 'text-blue-600' :
                     feature.color === 'purple' ? 'text-purple-600' :
@@ -953,8 +953,8 @@ export default function Home() {
                     feature.color === 'red' ? 'text-red-600' : 'text-yellow-600'
                   }`} />
                 </div>
-                <h3 className="font-display text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                <h3 className="font-display text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -962,12 +962,12 @@ export default function Home() {
       </section>
 
       {/* STATS SECTION */}
-      <section className="py-20 bg-emerald-600 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-emerald-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
         </div>
-        <div className="max-w-7xl mx-auto px-6 relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
               { number: '15+', label: 'Hours Saved Weekly', icon: Clock },
               { number: '40%', label: 'Fewer No-Shows', icon: TrendingDown },
@@ -982,11 +982,11 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center text-white"
               >
-                <div className="flex justify-center mb-3">
-                  <stat.icon className="w-8 h-8 text-emerald-200" />
+                <div className="flex justify-center mb-2 sm:mb-3">
+                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-200" />
                 </div>
-                <div className="font-display text-4xl md:text-5xl font-black mb-2">{stat.number}</div>
-                <div className="text-emerald-100 text-sm md:text-base">{stat.label}</div>
+                <div className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-1 sm:mb-2">{stat.number}</div>
+                <div className="text-emerald-100 text-xs sm:text-sm md:text-base">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -994,26 +994,26 @@ export default function Home() {
       </section>
 
       {/* PROBLEM SECTION */}
-      <section className="py-32 bg-cream relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 bg-cream relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(circle, #059669 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-16 lg:mb-20"
           >
-            <h2 className="font-display text-6xl md:text-7xl font-bold mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2">
               Running a salon shouldn't feel like{' '}
               <span className="gradient-text italic">running a circus</span>
             </h2>
-            <p className="text-2xl text-gray-600">Sound familiar?</p>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600">Sound familiar?</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 icon: MessageCircle,
@@ -1040,16 +1040,16 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group"
               >
-                <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 h-full border border-gray-100">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 h-full border border-gray-100">
                   <motion.div
-                    className="w-20 h-20 bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl flex items-center justify-center mb-6"
+                    className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-red-100 to-orange-100 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6"
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <item.icon className="w-10 h-10 text-red-500" />
+                    <item.icon className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-red-500" />
                   </motion.div>
-                  <h3 className="font-display text-3xl font-bold mb-4 text-gray-900">{item.title}</h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-gray-900">{item.title}</h3>
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -1058,47 +1058,47 @@ export default function Home() {
       </section>
 
       {/* SOLUTION SECTION */}
-      <section id="how-it-works" className="py-32 bg-[#1a1a1a] text-white relative overflow-hidden">
+      <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 bg-[#1a1a1a] text-white relative overflow-hidden">
         {/* Subtle grain texture */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")` }} />
 
         {/* Elegant gradient orbs */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] bg-emerald-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[400px] bg-gold/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
 
-        <div className="relative max-w-6xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-24"
+            className="text-center mb-12 sm:mb-16 lg:mb-24"
           >
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-emerald-400 uppercase tracking-[0.3em] text-sm font-medium mb-6"
+              className="text-emerald-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm font-medium mb-4 sm:mb-6"
             >
               How it works
             </motion.p>
-            <h2 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-[1.1] tracking-tight px-2">
               Meet SAL
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-gold">
                 Your AI Partner
               </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl mx-auto px-4">
               Three simple steps to transform your operations
             </p>
           </motion.div>
 
           {/* Steps - Horizontal Timeline */}
-          <div className="relative mb-20">
+          <div className="relative mb-12 sm:mb-16 lg:mb-20">
             {/* Connecting line */}
             <div className="hidden md:block absolute top-[60px] left-[16.67%] right-[16.67%] h-[1px] bg-gradient-to-r from-emerald-500/50 via-emerald-400/50 to-gold/50" />
 
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
               {[
                 {
                   num: '01',
@@ -1131,19 +1131,19 @@ export default function Home() {
                   className="relative group"
                 >
                   {/* Step number circle */}
-                  <div className="flex justify-center mb-8">
+                  <div className="flex justify-center mb-6 sm:mb-8">
                     <motion.div
                       className="relative"
                       whileHover={{ scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 400 }}
                     >
-                      <div className="w-[120px] h-[120px] rounded-full bg-[#252525] border border-gray-700/50 flex items-center justify-center relative overflow-hidden group-hover:border-emerald-500/50 transition-colors duration-500">
+                      <div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] rounded-full bg-[#252525] border border-gray-700/50 flex items-center justify-center relative overflow-hidden group-hover:border-emerald-500/50 transition-colors duration-500">
                         {/* Glow effect on hover */}
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-gold/0 group-hover:from-emerald-500/10 group-hover:to-gold/10 transition-all duration-500" />
-                        <step.icon className="w-10 h-10 text-emerald-400 relative z-10" />
+                        <step.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-emerald-400 relative z-10" />
                       </div>
                       {/* Number badge */}
-                      <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-sm font-bold text-white shadow-lg shadow-emerald-500/30">
+                      <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-xs sm:text-sm font-bold text-white shadow-lg shadow-emerald-500/30">
                         {step.num}
                       </div>
                     </motion.div>
@@ -1151,13 +1151,13 @@ export default function Home() {
 
                   {/* Content */}
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold mb-1 text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 text-white">
                       {step.title}
                     </h3>
-                    <p className="text-emerald-400 font-medium mb-4 text-lg">
+                    <p className="text-emerald-400 font-medium mb-3 sm:mb-4 text-base sm:text-lg">
                       {step.subtitle}
                     </p>
-                    <p className="text-gray-400 leading-relaxed text-base max-w-xs mx-auto">
+                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base max-w-xs mx-auto">
                       {step.desc}
                     </p>
                   </div>
@@ -1194,21 +1194,21 @@ export default function Home() {
       </section>
 
       {/* PRICING SECTION */}
-      <section id="pricing" className="py-32 bg-cream relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="pricing" className="py-16 sm:py-24 lg:py-32 bg-cream relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-16 lg:mb-20"
           >
-            <h2 className="font-display text-6xl md:text-7xl font-bold mb-4 text-gray-900">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-gray-900 px-2">
               One AI Assistant.{' '}
               <span className="gradient-text">Unlimited Possibilities.</span>
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               { name: 'Small', employees: '5-10 employees', setup: '15,000 AED', monthly: '1,500 AED', popular: false },
               { name: 'Medium', employees: '10-20 employees', setup: '20,000 AED', monthly: '2,000 AED', popular: true },
@@ -1223,33 +1223,33 @@ export default function Home() {
                 className="relative"
               >
                 {plan.popular && (
-                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold to-yellow-600 text-emerald-900 px-6 py-2 rounded-full font-black text-sm shadow-lg">
+                  <div className="absolute -top-4 sm:-top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold to-yellow-600 text-emerald-900 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-black text-xs sm:text-sm shadow-lg z-10">
                     POPULAR
                   </div>
                 )}
                 <motion.div
-                  className={`p-10 rounded-3xl h-full ${
+                  className={`p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl h-full ${
                     plan.popular
-                      ? 'bg-gradient-to-br from-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-600/50 scale-105'
+                      ? 'bg-gradient-to-br from-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-600/50 sm:scale-105'
                       : 'bg-white border-2 border-gray-200 text-gray-900'
                   }`}
                   whileHover={{ scale: plan.popular ? 1.08 : 1.03, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <h3 className="font-display text-4xl font-bold mb-2">{plan.name}</h3>
-                  <p className={`text-sm mb-8 ${plan.popular ? 'text-emerald-100' : 'text-gray-600'}`}>{plan.employees}</p>
-                  
-                  <div className="mb-6">
-                    <div className={`text-sm mb-1 ${plan.popular ? 'text-emerald-100' : 'text-gray-600'}`}>Setup Fee</div>
-                    <div className="font-display text-5xl font-black">{plan.setup}</div>
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2">{plan.name}</h3>
+                  <p className={`text-xs sm:text-sm mb-4 sm:mb-6 lg:mb-8 ${plan.popular ? 'text-emerald-100' : 'text-gray-600'}`}>{plan.employees}</p>
+
+                  <div className="mb-4 sm:mb-6">
+                    <div className={`text-xs sm:text-sm mb-1 ${plan.popular ? 'text-emerald-100' : 'text-gray-600'}`}>Setup Fee</div>
+                    <div className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black">{plan.setup}</div>
                   </div>
 
-                  <div className="mb-10">
-                    <div className={`text-sm mb-1 ${plan.popular ? 'text-emerald-100' : 'text-gray-600'}`}>Monthly</div>
-                    <div className="font-display text-5xl font-black">{plan.monthly}</div>
+                  <div className="mb-6 sm:mb-8 lg:mb-10">
+                    <div className={`text-xs sm:text-sm mb-1 ${plan.popular ? 'text-emerald-100' : 'text-gray-600'}`}>Monthly</div>
+                    <div className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black">{plan.monthly}</div>
                   </div>
 
-                  <ul className="space-y-3 mb-10 text-sm">
+                  <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 lg:mb-10 text-xs sm:text-sm">
                     {[
                       { icon: Sparkles, text: 'All features' },
                       { icon: Headphones, text: '24/7 support' },
@@ -1257,9 +1257,9 @@ export default function Home() {
                       { icon: MessageCircle, text: 'WhatsApp integration' },
                       { icon: Calendar, text: '24h delivery' },
                     ].map((feature, j) => (
-                      <li key={j} className="flex items-center gap-3">
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${plan.popular ? 'bg-white/20' : 'bg-emerald-100'}`}>
-                          <Check className={`w-4 h-4 ${plan.popular ? 'text-white' : 'text-emerald-600'}`} />
+                      <li key={j} className="flex items-center gap-2 sm:gap-3">
+                        <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 ${plan.popular ? 'bg-white/20' : 'bg-emerald-100'}`}>
+                          <Check className={`w-3 h-3 sm:w-4 sm:h-4 ${plan.popular ? 'text-white' : 'text-emerald-600'}`} />
                         </div>
                         <span>{feature.text}</span>
                       </li>
@@ -1270,7 +1270,7 @@ export default function Home() {
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block text-center py-4 rounded-xl font-bold ${
+                    className={`block text-center py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base ${
                       plan.popular
                         ? 'bg-white text-emerald-700 hover:bg-gray-100'
                         : 'bg-emerald-600 text-white hover:bg-emerald-700'
@@ -1288,24 +1288,24 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <section id="testimonials" className="py-32 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="testimonials" className="py-16 sm:py-24 lg:py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 px-2">
               Loved by{' '}
               <span className="gradient-text">Salon Owners</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               See what business owners are saying about their experience with SAL.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 name: 'Sarah Al-Rashid',
@@ -1335,24 +1335,24 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="bg-cream rounded-2xl p-8 relative"
+                className="bg-cream rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 relative"
               >
-                <Quote className="absolute top-6 right-6 w-10 h-10 text-emerald-200" />
-                <div className="flex gap-1 mb-4">
+                <Quote className="absolute top-4 right-4 sm:top-6 sm:right-6 w-8 h-8 sm:w-10 sm:h-10 text-emerald-200" />
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, j) => (
-                    <Star key={j} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    <Star key={j} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.quote}"</p>
-                <div className="flex items-center gap-4">
+                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed italic">"{testimonial.quote}"</p>
+                <div className="flex items-center gap-3 sm:gap-4">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-emerald-200"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-emerald-200"
                   />
                   <div>
-                    <p className="font-bold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    <p className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</p>
+                    <p className="text-xs sm:text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -1362,24 +1362,24 @@ export default function Home() {
       </section>
 
       {/* FAQ SECTION */}
-      <section id="faq" className="py-32 bg-cream relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6">
+      <section id="faq" className="py-16 sm:py-24 lg:py-32 bg-cream relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 px-2">
               Frequently Asked{' '}
               <span className="gradient-text">Questions</span>
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600">
               Everything you need to know about SAL.
             </p>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {[
               {
                 question: 'How does SAL integrate with my WhatsApp?',
@@ -1412,15 +1412,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+                className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100"
               >
-                <h3 className="font-display text-lg font-bold text-gray-900 mb-3 flex items-start gap-3">
-                  <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-emerald-600 font-bold text-sm">Q</span>
+                <h3 className="font-display text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 flex items-start gap-2 sm:gap-3">
+                  <span className="w-6 h-6 sm:w-8 sm:h-8 bg-emerald-100 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-emerald-600 font-bold text-xs sm:text-sm">Q</span>
                   </span>
                   {faq.question}
                 </h3>
-                <p className="text-gray-600 leading-relaxed pl-11">{faq.answer}</p>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed pl-8 sm:pl-11">{faq.answer}</p>
               </motion.div>
             ))}
           </div>
@@ -1428,7 +1428,7 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 bg-cream relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 bg-cream relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Top gradient line */}
@@ -1443,16 +1443,16 @@ export default function Home() {
           <div className="absolute bottom-20 right-20 w-32 h-32 border-r-2 border-b-2 border-emerald-500/20 rounded-br-3xl hidden md:block" />
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-6">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-6 sm:mb-8"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
-              <Sparkles className="w-4 h-4" />
+            <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-emerald-50 text-emerald-700 rounded-full text-xs sm:text-sm font-medium">
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
               Start your journey today
             </span>
           </motion.div>
@@ -1463,7 +1463,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-5xl md:text-7xl font-bold text-center mb-6 text-gray-900 leading-[1.1]"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-4 sm:mb-6 text-gray-900 leading-[1.1] px-2"
           >
             Ready to Take Back
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-500">
@@ -1477,7 +1477,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4"
           >
             Join 30+ salons already running on SAL. Setup takes 24 hours. Results last forever.
           </motion.p>
@@ -1488,25 +1488,25 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 sm:mb-16 px-4"
           >
             <motion.a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-gray-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-gray-900/20 hover:shadow-2xl hover:shadow-gray-900/30 transition-shadow"
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-gray-900 text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-xl shadow-gray-900/20 hover:shadow-2xl hover:shadow-gray-900/30 transition-shadow"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
               See SAL in Action
-              <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                <ArrowRight className="w-4 h-4" />
+              <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </span>
             </motion.a>
 
             <motion.a
               href={`mailto:${email}`}
-              className="inline-flex items-center justify-center px-8 py-5 bg-white text-gray-900 rounded-2xl font-bold text-lg border-2 border-gray-200 hover:border-emerald-500 hover:text-emerald-700 transition-colors"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-5 bg-white text-gray-900 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg border-2 border-gray-200 hover:border-emerald-500 hover:text-emerald-700 transition-colors"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -1520,7 +1520,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4"
           >
             {[
               { icon: Shield, text: '7-Day Money-Back', subtext: 'Guarantee' },
@@ -1535,13 +1535,13 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 + i * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-100 transition-all text-center"
+                className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-100 transition-all text-center"
               >
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-emerald-50 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-emerald-600" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 rounded-lg sm:rounded-xl bg-emerald-50 flex items-center justify-center">
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                 </div>
-                <p className="font-bold text-gray-900 text-sm">{item.text}</p>
-                <p className="text-gray-500 text-xs">{item.subtext}</p>
+                <p className="font-bold text-gray-900 text-xs sm:text-sm">{item.text}</p>
+                <p className="text-gray-500 text-[10px] sm:text-xs">{item.subtext}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -1549,22 +1549,22 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 flex items-center justify-center">
+      <footer className="bg-gray-900 text-white py-10 sm:py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-8 sm:mb-12">
+            <div className="text-center sm:text-left">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex items-center justify-center">
                   <OwlLogo className="w-full h-full drop-shadow-lg" animated={true} />
                 </div>
-                <span className="font-display text-3xl font-black">SAL</span>
+                <span className="font-display text-2xl sm:text-3xl font-black">SAL</span>
               </div>
-              <p className="text-gray-400 leading-relaxed">AI Operations Partner for Service Businesses</p>
+              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">AI Operations Partner for Service Businesses</p>
             </div>
 
-            <div>
-              <h4 className="font-bold text-lg mb-4">Contact</h4>
-              <ul className="space-y-3 text-gray-400">
+            <div className="text-center sm:text-left">
+              <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Contact</h4>
+              <ul className="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
                 <li>
                   <a href={`mailto:${email}`} className="hover:text-emerald-400 transition-colors">
                     {email}
@@ -1578,16 +1578,16 @@ export default function Home() {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-bold text-lg mb-4">Company</h4>
-              <p className="text-gray-400 leading-relaxed">
+            <div className="text-center sm:text-left sm:col-span-2 md:col-span-1">
+              <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Company</h4>
+              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
                 Dubai, UAE<br />
                 Founders: Anas & Fahim
               </p>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+          <div className="border-t border-gray-800 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-500">
             <p>&copy; 2026 SAL. All rights reserved.</p>
           </div>
         </div>
