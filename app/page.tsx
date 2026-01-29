@@ -199,9 +199,9 @@ export default function Home() {
           className="relative z-10 max-w-7xl mx-auto px-6 py-12"
         >
           <div className="text-center">
-            {/* Floating Owl Logo - BIGGER with animated eyes */}
+            {/* Floating Owl Logo - fits in viewport */}
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="inline-flex items-center justify-center mb-6"
@@ -211,11 +211,11 @@ export default function Home() {
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Big owl logo without background */}
+                {/* Owl logo - responsive size */}
                 <motion.div
                   className="w-20 h-20 md:w-28 md:h-28"
                   animate={{ 
-                    y: [0, -8, 0],
+                    y: [0, -6, 0],
                   }}
                   transition={{
                     duration: 3,
@@ -225,7 +225,7 @@ export default function Home() {
                 >
                   <OwlLogo className="w-full h-full drop-shadow-2xl" animated={true} />
                 </motion.div>
-                {/* Sparkle effects around the owl */}
+                {/* Sparkle effects */}
                 <motion.div
                   className="absolute -top-3 -right-3 w-5 h-5 bg-gold rounded-full"
                   animate={{
@@ -264,9 +264,9 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Headline - responsive sizes */}
             <motion.h1
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="font-display text-5xl md:text-8xl font-black mb-6 leading-[0.95] tracking-tight"
@@ -276,9 +276,9 @@ export default function Home() {
               <span className="block text-gray-900">In One Chat</span>
             </motion.h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - smaller on mobile */}
             <motion.p
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto font-light leading-relaxed"
@@ -288,9 +288,9 @@ export default function Home() {
               <span className="italic">not admin</span>.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - compact */}
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-10"
@@ -309,13 +309,13 @@ export default function Home() {
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
                 />
-                <span className="relative z-10 flex items-center gap-3">
+                <span className="relative z-10 flex items-center gap-2">
                   See SAL in Action
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                   </motion.span>
                 </span>
               </motion.a>
@@ -330,14 +330,14 @@ export default function Home() {
               </motion.a>
             </motion.div>
 
-            {/* Social Proof */}
+            {/* Social Proof - compact */}
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="inline-flex items-center gap-5 glass px-8 py-4 rounded-full"
             >
-              <div className="flex -space-x-3">
+              <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <motion.img
                     key={i}
