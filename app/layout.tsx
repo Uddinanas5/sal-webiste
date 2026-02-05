@@ -3,6 +3,7 @@ import "./globals.css";
 
 // SEO-optimized metadata with local keywords (Dubai, salon, spa, AI)
 export const metadata: Metadata = {
+  metadataBase: new URL("https://meetsal.ai"),
   title: "SAL - AI Operations Partner for Salons & Spas in Dubai | WhatsApp Business Automation",
   description: "SAL is the #1 AI operations partner for salons, spas, and barbershops in Dubai. Run your entire business through WhatsApp - bookings, team management, customer support. Setup in 24 hours. Trusted by 30+ salons across UAE.",
   keywords: [
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_AE",
-    url: "https://website-v2-opal.vercel.app",
+    url: "https://meetsal.ai",
     siteName: "SAL - AI Operations Partner",
     title: "SAL - AI Operations Partner for Salons & Spas in Dubai",
     description: "Run your entire salon, spa, or barbershop through one WhatsApp chat. AI-powered operations partner trusted by 30+ businesses in Dubai. Setup in 24 hours.",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://website-v2-opal.vercel.app",
+    canonical: "https://meetsal.ai",
   },
   category: "Business Software",
   classification: "Salon Management Software",
@@ -90,8 +91,8 @@ const localBusinessSchema = {
   "provider": {
     "@type": "Organization",
     "name": "SAL",
-    "url": "https://website-v2-opal.vercel.app",
-    "logo": "https://website-v2-opal.vercel.app/owl-logo.png",
+    "url": "https://meetsal.ai",
+    "logo": "https://meetsal.ai/owl-logo.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Dubai",
