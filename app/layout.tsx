@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://meetsal.ai"),
   title: "SAL - AI Operations Partner for Salons & Spas in Dubai | WhatsApp Business Automation",
-  description: "SAL is the #1 AI operations partner for salons, spas, and barbershops in Dubai. Run your entire business through WhatsApp - bookings, team management, customer support. Setup in 24 hours. Trusted by 30+ salons across UAE.",
+  description: "SAL is an autonomous AI operations partner for salons, spas, and barbershops in Dubai. Run your entire business through WhatsApp: team communication, task management, business intelligence, proactive monitoring. Setup in 1-3 days. Built by salon owners, for salon owners.",
   keywords: [
     "AI salon management Dubai",
     "WhatsApp business automation UAE",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: "https://meetsal.ai",
     siteName: "SAL - AI Operations Partner",
     title: "SAL - AI Operations Partner for Salons & Spas in Dubai",
-    description: "Run your entire salon, spa, or barbershop through one WhatsApp chat. AI-powered operations partner trusted by 30+ businesses in Dubai. Setup in 24 hours.",
+    description: "Run your entire salon, spa, or barbershop through one WhatsApp chat. AI-powered operations partner built by a salon owner, for salon owners. Setup in 1-3 days.",
     images: [
       {
         url: "/og-image.png",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SAL - AI Operations Partner for Salons & Spas in Dubai",
-    description: "Run your entire business through WhatsApp. AI-powered operations for salons, spas & barbershops. Trusted by 30+ Dubai businesses.",
+    description: "Run your entire business through WhatsApp. AI-powered operations for salons, spas & barbershops. Built by a salon owner, for salon owners.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -75,18 +75,10 @@ const localBusinessSchema = {
   "operatingSystem": "Web, WhatsApp",
   "description": "AI-powered operations partner for salons, spas, and barbershops. Manage your entire business through WhatsApp.",
   "offers": {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
     "priceCurrency": "AED",
-    "lowPrice": "1500",
-    "highPrice": "2500",
-    "offerCount": "3"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "30",
-    "bestRating": "5",
-    "worstRating": "1"
+    "price": "1500",
+    "description": "Starting from 1,500 AED/month. Setup fees from 15,000 AED. Priced by team size."
   },
   "provider": {
     "@type": "Organization",
@@ -100,7 +92,7 @@ const localBusinessSchema = {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+971523228314",
+      "telephone": "+9715643333073",
       "contactType": "sales",
       "availableLanguage": ["English", "Arabic"]
     }
@@ -121,7 +113,7 @@ const faqSchema = {
       "name": "What is SAL?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SAL is an AI operations partner that helps salons, spas, and barbershops manage their entire business through WhatsApp. It handles bookings, team communication, customer inquiries, and more."
+        "text": "SAL is an autonomous AI operations partner that helps salons, spas, and barbershops manage their entire business through WhatsApp. It handles bookings, team communication, customer inquiries, proactive alerts, and more. It doesn't wait to be asked."
       }
     },
     {
@@ -129,7 +121,7 @@ const faqSchema = {
       "name": "How long does SAL setup take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SAL is fully configured and ready to use within 24 hours. We customize it to know your business, services, team, pricing, and voice."
+        "text": "Most salons are up and running within 1-3 days. We handle the technical setup, customize SAL for your business, connect your Fresha account, and train SAL on your operations."
       }
     },
     {
@@ -137,15 +129,31 @@ const faqSchema = {
       "name": "How much does SAL cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SAL offers three pricing tiers: Small (5-10 employees) at 1,500 AED/month, Medium (10-20 employees) at 2,000 AED/month, and Large (20+ employees) at 2,500 AED/month. Setup fees range from 15,000-25,000 AED."
+        "text": "SAL is priced by team size. Small salons (5-10 staff): 15,000 AED setup + 1,500 AED/month. Medium (10-20 staff): 20,000 AED setup + 2,000 AED/month. Large (20+ staff): 25,000 AED setup + 2,500 AED/month. All plans include every feature, 24/7 support, and no long-term contracts."
       }
     },
     {
       "@type": "Question",
-      "name": "Is SAL available in Dubai?",
+      "name": "Does SAL work with Fresha?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes! SAL is trusted by 30+ salons across Dubai and the UAE. We specialize in helping local beauty businesses automate their operations."
+        "text": "Yes. SAL integrates directly with Fresha to pull your booking data, client history, service analytics, and more. No manual data entry. Everything syncs automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does autonomous actually mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SAL doesn't wait for you to ask questions. It monitors your Fresha data 24/7 and proactively alerts you to booking declines, dormant VIP clients, staff patterns, and revenue opportunities. You approve actions with one tap."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes SAL different from other salon software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SAL isn't a dashboard you log into. It's an autonomous AI partner you message on WhatsApp, the app your team already uses. No training, no learning curve. It doesn't just respond. It thinks ahead."
       }
     }
   ]
@@ -162,10 +170,10 @@ export default function RootLayout({
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
         {/* SEO Schema Markup */}
